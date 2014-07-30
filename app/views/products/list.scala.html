@@ -10,6 +10,7 @@
             <th>EAN</th>
             <th>Name</th>
             <th>Description</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -17,10 +18,16 @@
         <tr>
             <td><a href="@routes.Products.details(product.ean)">@product.ean</a></td>
             <td><a href="@routes.Products.details(product.ean)">@product.name</a></td>
-            <td><a href="@routes.Products.details(product.ean)">@product.name</a></td>
+            <td><a href="@routes.Products.details(product.ean)">@product.description</a></td>
+            <td>
+                <a href="@routes.Products.details(product.ean)"><i class="glyphicon glyphicon-pencil"></i></a>
+                <a onclick="del('@routes.Products.delete(product.ean)')"><i class="glyphicon glyphicon-trash"></i></a>
+            </td>
         </tr>
     }
     </tbody>
     </table>
+
+        <a href="@routes.Products.newProduct()" class="btn btn-default"><i class="icon-plus"></i> New Product</a>
 
 }
